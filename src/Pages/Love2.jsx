@@ -5,6 +5,7 @@ import { SplitText } from "gsap/SplitText";
 import Moments from '../Components/Moments';
 import bg from '../assets/bg.jpeg'
 import Together from '../Components/Together';
+import MediaQuery from 'react-responsive';
 
 gsap.registerPlugin(SplitText, useGSAP);
 
@@ -35,6 +36,11 @@ const Love2 = () => {
       </div>
 
       <div className='check bg-pink-400/10 backdrop-blur-[1.5px]'>
+      <p className='text-center'>scroll down to see the images</p>
+      <MediaQuery maxWidth={768}>
+        <p className='text-center'>Tap on the images to see the description</p>
+      </MediaQuery>
+      
         <Together/>
       </div>
 

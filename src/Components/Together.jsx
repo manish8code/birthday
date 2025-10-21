@@ -21,11 +21,11 @@ const Together = () => {
 
     const ctx = gsap.context(() => {
       gsap.to(inner, {
-        x: -(totalScroll+150),
+        x: -(totalScroll+50),
         ease: "none",
         scrollTrigger: {
           trigger: ".check",
-          start: "top 20%",
+          start: "top 10%",
           end: `+=${totalScroll}`,
           pin: true,
           scrub: 1,
@@ -44,17 +44,18 @@ const Together = () => {
       ref={outerRef}
       className="outer relative w-screen overflow-hidden min-h-screen"
     >
+      
       <div ref={innerRef} className="inner flex w-fit">
         {images.map(({ id, src, alt }) => (
           <div
             key={id}
-            className="relative group rounded-xl hover:cursor-pointer hover:rounded-xl h-96 w-[22rem] mx-3 flex-shrink-0"
+            className="relative group rounded-xl hover:cursor-pointer hover:scale-105 hover:rounded-xl h-96 w-[22rem] mx-3 flex-shrink-0"
           >
             <img
               src={src}
               alt={alt}
               loading="lazy"
-              className="h-96 w-full rounded-xl shadow-md hover:scale-105 hover:rounder-xl transition-transform object-cover"
+              className="h-96 w-full rounded-xl shadow-md  hover:rounder-xl transition-transform object-cover"
             />
             <h1 className="absolute bottom-0 left-0 w-full p-3 font-elegant text-2xl bg-pink-300/60 text-[#722737] text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               {alt}
