@@ -54,11 +54,12 @@ const Wish = () => {
       ref={containerRef}
       className="centered h-dvh flex flex-col items-center justify-center leading-[0.9] "
     >
+      
       <div className=" m-3.5">
         <h2
           ref={textRef}
           className="first-text text-center font-antonio font-bold text-[#832c40] text-shadow-red-900/75 text-shadow-lg 
-                     text-[4.2rem] md:text-[6rem] lg:text-[8rem] tracking-[-0.4rem] lg:tracking-[-0.2rem]"
+                     text-[5.2rem] md:text-[6rem] lg:text-[8rem] tracking-[-0.4rem] lg:tracking-[-0.2rem]"
         >
           A VERY HAPPIEST
         </h2>
@@ -73,7 +74,7 @@ const Wish = () => {
       >
         <h1
           className="font-antonio font-bold text-[#e0cbd0] lg:m-3 lg:mb-6 m-2 mb-4
-                     text-[3.5rem] md:text-[5.8rem] lg:text-[8rem] 
+                     text-[4.5rem] text-center md:text-[5.8rem] lg:text-[8rem] 
                      tracking-[-0.1rem] lg:tracking-[-0.15rem]"
         >
           BIRTHDAY TO YOU!
