@@ -12,7 +12,7 @@ const Love1 = () => {
       </MediaQuery>
       
       <div className="mb-5 md:mb-9 "><BirthdayCard/></div>
-      <div className="h-dvh"></div>
+      
       
     </div>
   )
