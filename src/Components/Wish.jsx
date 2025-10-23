@@ -52,7 +52,7 @@ const Wish = () => {
   return (
     <div
       ref={containerRef}
-      className="centered h-dvh flex flex-col items-center justify-center leading-[0.9] "
+      className="centered h-dvh flex flex-col items-center justify-center leading-[0.9]  "
     >
       
       <div className=" m-3.5">

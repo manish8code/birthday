@@ -15,7 +15,7 @@ const Navabar = () => {
   }, [location]);
 
   const menuItems = (
-    <ul className="flex md:flex-row flex-col justify-around md:space-x-16 md:space-y-0 space-y-10">
+    <ul className="flex md:flex-row flex-col justify-around md:space-x-16 md:space-y-0 space-y-10  h-60 sm:h-8">
       <li className='svg-pink-drop-shadow'>
         <NavLink to='/love1'><img src={heartsvg} className="w-9 h-8 svg-pink-drop-shadow" /></NavLink>
       </li>
@@ -47,7 +47,7 @@ const Navabar = () => {
           className="w-8 h-8 cursor-pointer"
           onClick={() => setMenuOpen(!menuOpen)}
         />
-        {menuOpen && <div className="absolute top-14 right-0 bg-pink-400/30 shadow-md p-3 rounded">{menuItems}</div>}
+        {menuOpen && <div className="absolute top-14 right-0 bg-pink-400/40 shadow-md p-3 rounded ">{menuItems}</div>}
       </MediaQuery>
 
       {/* Desktop Menu */}

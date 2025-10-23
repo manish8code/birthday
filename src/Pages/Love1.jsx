@@ -6,7 +6,7 @@ import MediaQuery from 'react-responsive'
 const Love1 = () => {
   return (
     <div  className='   flex flex-col items-center justify-center '>
-      <div className="h-dvh w-full "><Wish  /></div>
+      <div className="h-dvh w-full p-1 "><Wish  /></div>
       <MediaQuery maxWidth={746}>
       <p className='text-center'>Tap on the card to reveal and tap outside to close it</p>
       </MediaQuery>
