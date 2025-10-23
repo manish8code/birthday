@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap'; // <-- import GSAP
 import { useGSAP } from '@gsap/react';
 import { SplitText } from "gsap/SplitText";
@@ -10,6 +10,13 @@ import MediaQuery from 'react-responsive';
 gsap.registerPlugin(SplitText, useGSAP);
 
 const Love2 = () => {
+    useEffect(() => {
+    const handleContextMenu = (e) => e.preventDefault();
+    document.addEventListener("contextmenu", handleContextMenu);
+    return () => {
+      document.removeEventListener("contextmenu", handleContextMenu);
+    };
+  }, []);
   const textRef = useRef(null);
   useGSAP(() => {
     document.fonts.ready.then(() => {
