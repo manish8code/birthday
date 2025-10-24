@@ -49,13 +49,13 @@ const Together = () => {
         {images.map(({ id, src, alt }) => (
           <div
             key={id}
-            className="relative group rounded-xl hover:cursor-pointer hover:scale-105 hover:rounded-xl h-96 w-[22rem] mx-3 flex-shrink-0"
+            className="relative group rounded-xl hover:cursor-pointer hover:scale-105 hover:rounded-xl h-85 lg:h-96 w-[18rem] lg:w-[22rem] mx-3 flex-shrink-0"
           >
             <img
               src={src}
               alt={alt}
               loading="lazy"
-              className="h-96 w-full rounded-xl shadow-md  hover:rounder-xl transition-transform object-cover"
+              className="lg:h-96 h-85 w-full rounded-xl shadow-md  hover:rounder-xl transition-transform object-cover"
             />
             <h1 className="absolute bottom-0 left-0 w-full p-3 font-elegant text-2xl bg-pink-300/60 text-[#722737] text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               {alt}
