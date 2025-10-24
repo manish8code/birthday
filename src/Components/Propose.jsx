@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 const Propose = ({ yes, setYes }) => {
-  const [top, setTop] = useState(50);
-  const [left, setLeft] = useState(50);
+  const [top, setTop] = useState(50);     // percentage
+  const [left, setLeft] = useState(50);   // percentage
   const [translate, setTranslate] = useState(true); // initial center
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
@@ -19,15 +19,23 @@ const Propose = ({ yes, setYes }) => {
   const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
   const changePosition = () => {
+    if (typeof window === 'undefined') return;
+
+    // Box dimensions in percentage relative to viewport
+    const boxWidthPercent = (240 / window.innerWidth) * 100; // 240px / viewport width
+    const boxHeightPercent = (160 / window.innerHeight) * 100; // 160px / viewport height
+
+    const maxLeft = 100 - boxWidthPercent;
+    const maxTop = 100 - boxHeightPercent;
+
+    // Generate random percentages
+    const newLeft = getRandomNumber(0,maxLeft);
+    const newTop = getRandomNumber(10,maxTop);
     
-       setTop(getRandomNumber(10, 70));
-       // Different left range for touch vs desktop
-       if (isTouchDevice) {
-         setLeft(getRandomNumber(0, 80));
-       } else {
-         setLeft(getRandomNumber(0, 40));
-       }
-       console.log(top,left)
+
+    setLeft(newLeft);
+    setTop(newTop);
+
     if (translate) setTranslate(false); // remove initial translate
   };
 
