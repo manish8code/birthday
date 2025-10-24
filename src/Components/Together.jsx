@@ -28,7 +28,7 @@ const Together = () => {
           start: "top 10%",
           end: `+=${totalScroll}`,
           pin: true,
-          scrub: 1,
+          scrub: 3,
           //markers: true, // remove in production
           invalidateOnRefresh: true,
         },
