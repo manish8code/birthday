@@ -1,9 +1,11 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import Propose from '../Components/Propose'
+import AfterPropose from '../Components/AfterPropose';
 const Love3 = () => {
+  const [yes,setYes]=useState(false);
   return (
-    <div className='h-dvh bg-blue-300 flex items-center justify-center text-4xl font-bold'>
-      love 
+    <div className='h-dvh  '>
+           {(!yes) ? <Propose  setYes={setYes} /> : <AfterPropose />}
     </div>
   )
 }

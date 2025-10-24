@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap'; // <-- import GSAP
 import { useGSAP } from '@gsap/react';
 import { SplitText } from "gsap/SplitText";
-import Moments from '../Components/Moments';
 import bg from '../assets/bg.jpeg'
 import Together from '../Components/Together';
 import MediaQuery from 'react-responsive';
@@ -10,6 +9,7 @@ import MediaQuery from 'react-responsive';
 gsap.registerPlugin(SplitText, useGSAP);
 
 const Love2 = () => {
+    //done this to prevent the right click and download of the photo
     useEffect(() => {
     const handleContextMenu = (e) => e.preventDefault();
     document.addEventListener("contextmenu", handleContextMenu);
