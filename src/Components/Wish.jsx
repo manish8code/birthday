@@ -73,7 +73,7 @@ const Wish = () => {
         }}
       >
         <h1
-          className="font-antonio font-bold text-[#e0cbd0] lg:m-3 lg:mb-6 m-2 mb-4
+          className="font-antonio font-bold bg-[#a03939] text-[#e0cbd0] lg:m-3 lg:mb-6 m-2 mb-4
                      text-[4.5rem] text-center md:text-[5.8rem] lg:text-[8rem] 
                      lg:tracking-[-0.15rem]"
         >

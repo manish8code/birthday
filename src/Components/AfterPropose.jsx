@@ -1,43 +1,18 @@
 import React, { useState, useEffect } from "react";
 import kiss1 from "../assets/kiss1.gif";
 import kiss2 from "../assets/kiss2.gif";
-import Loader from "../Loader.jsx";
+
 const AfterPropose = () => {
   const [ok, setOk] = useState(false);
   const [showButton, setShowButton] = useState(true);
-  const [loading, setLoading] = useState(true); // 🔥 new state for loader
-
-  // Preload both GIFs when component mounts
-  useEffect(() => {
-    const images = [kiss1, kiss2];
-    let loadedCount = 0;
-
-    images.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-      img.onload = () => {
-        loadedCount++;
-        if (loadedCount === images.length) {
-          setLoading(false); // ✅ All images are ready
-        }
-      };
-    });
-  }, []);
 
   const yes = () => {
     setOk(true);
     setShowButton(false);
   };
 
-  if (loading) {
-    // ⏳ Show spinner until GIFs are loaded
-    return (
-      <Loader/>
-    );
-  }
-
   return (
-    <div className="h-dvh flex items-center justify-center pt-8 bg-black/50">
+    <div className="h-dvh flex items-center justify-center pt-8 bg-pink-400/10 backdrop-blur-[1.5px]">
       <div className="relative md:h-[90%] flex justify-center px-2">
         <img
           src={!ok ? kiss1 : kiss2}

@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap'; // <-- import GSAP
 import { useGSAP } from '@gsap/react';
 import { SplitText } from "gsap/SplitText";
-import bg from '../assets/bg.jpeg'
 import Together from '../Components/Together';
 import MediaQuery from 'react-responsive';
 
@@ -35,7 +34,7 @@ const Love2 = () => {
 }, {scope: textRef});
 
   return (
-    <div style={{ backgroundImage: `url(${bg})` }} className=' bg-cover bg-center bg-fixed '>
+    <div >
       <div className=''>
         <div className="h-dvh w-full  flex flex-col justify-center items-center text-center">
           <h1 ref={textRef} className='info lg:text-9xl text-8xl font-romantic font-bold text-[#832c40]' >Here are some beautiful moments of us</h1>

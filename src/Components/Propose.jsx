@@ -40,7 +40,7 @@ const Propose = ({ yes, setYes }) => {
   };
 
   return (
-    <div className="h-dvh relative pt-16 p-2">
+    <div className="h-dvh relative pt-16 p-2 bg-pink-400/10 backdrop-blur-[1.5px]">
       <div
         className="md:h-40 md:w-60 h-30 w-50 bg-pink-100 flex flex-col justify-around absolute rounded-lg shadow-lg transition-all duration-300"
         style={{
