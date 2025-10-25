@@ -57,7 +57,7 @@ const Together = () => {
               loading="lazy"
               className="md:h-96 h-85 w-full rounded-xl shadow-md  hover:rounder-xl transition-transform object-cover"
             />
-            <h1 className="absolute bottom-0 left-0 w-full p-3 font-elegant text-2xl bg-pink-300/60 text-[#722737] text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <h1 className="rounded-b-xl absolute bottom-0 left-0 w-full p-3 font-elegant text-2xl bg-pink-300/60 text-[#722737] text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               {alt}
             </h1>
           </div>

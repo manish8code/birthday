@@ -1,11 +1,40 @@
-import React from 'react'
+import React, { useState } from "react";
+import kiss1 from "../assets/kiss1.gif";
+import kiss2 from "../assets/kiss2.gif";
 
 const AfterPropose = () => {
-  return (
-    <div className='h-dvh p-16'>
-      <h1>somthing after purpose but there is also the padding in parent</h1>
-    </div>
-  )
-}
+  const [ok, setOk] = useState(false);
+  const [showButton, setShowButton] = useState(true);
 
-export default AfterPropose
+  const yes = () => {
+    setOk(true);          // switch to kiss2.gif
+    setShowButton(false); // hide the button
+  };
+
+  return (
+    <div className="h-dvh flex items-center justify-center pt-8 bg-black/30 ">
+      <div className="relative md:h-[90%] flex justify-center px-2">
+        <img
+          src={!ok ? kiss1 : kiss2}
+          alt="Animated GIF"
+          className="w-full h-full object-cover rounded-2xl shadow-lg"
+        />
+        
+        {showButton && (
+         <div className="absolute bottom-0 w-full flex justify-center">
+          <h1 className="font-elegant absolute bottom-20 text-3xl font-bold">Come close baby!</h1>
+          <button
+            onClick={yes}
+            className="bg-blue-500 text-white w-16 h-10 rounded-md cursor-pointer hover:bg-blue-600 absolute bottom-6"
+          >
+            OK
+          </button>
+         </div> 
+          
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default AfterPropose;
