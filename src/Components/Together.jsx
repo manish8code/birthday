@@ -45,7 +45,7 @@ const Together = () => {
       className="outer relative w-screen overflow-hidden min-h-screen"
     >
       
-      <div ref={innerRef} className="inner flex w-fit">
+      <div ref={innerRef} className="inner flex items-center w-fit">
         {images.map(({ id, src, alt }) => (
           <div
             key={id}

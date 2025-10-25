@@ -36,7 +36,7 @@ const Navabar = () => {
     <div className="w-full h-14 bg-red-200/30 flex items-center justify-around sticky top-0 z-50 shadow-md backdrop-blur-md px-5">
       
       <div className=" md:text-5xl text-4xl md:w-[40%] font-bold font-romantic ">
-        <NavLink to='/'><h1 className='text-[#722737] hover:scale-110 hover:duration-200 md:hover:translate-x-7'>Manish-Pooja</h1></NavLink>
+        <NavLink to='/'><h1 className='text-[#722737] md:hover:scale-110 md:hover:duration-200 md:hover:translate-x-7'>Manish-Pooja</h1></NavLink>
       </div>
 
       {/* Mobile Menu */}

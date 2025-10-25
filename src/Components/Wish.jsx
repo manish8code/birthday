@@ -59,7 +59,7 @@ const Wish = () => {
         <h2
           ref={textRef}
           className="first-text text-center font-antonio font-bold text-[#832c40] text-shadow-red-900/75 text-shadow-lg 
-                     text-[5.2rem] md:text-[6rem] lg:text-[8rem]  tracking-[-0.2rem] lg:tracking-[-0.2rem]"
+                     text-[5.2rem] md:text-[8rem] lg:text-[8rem]  tracking-[-0.2rem] md:tracking-[-0.2rem]"
         >
           A VERY HAPPIEST
         </h2>
@@ -67,15 +67,15 @@ const Wish = () => {
 
       <div
         className="second-text bg-[#a03939]  rounded-2xl rotate-[-2.8deg] -translate-y-4  opacity-0"
-        // w-[90%] lg:w-[51.5%]
+        // w-[90%] md:w-[51.5%]
         style={{
           clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)",
         }}
       >
         <h1
-          className="font-antonio font-bold bg-[#a03939] text-[#e0cbd0] lg:m-3 lg:mb-6 m-2 mb-4
-                     text-[4.5rem] text-center md:text-[5.8rem] lg:text-[8rem] 
-                     lg:tracking-[-0.15rem]"
+          className="font-antonio font-bold bg-[#a03939] text-[#e0cbd0] md:m-3 md:mb-6 m-2 mb-4
+                     text-[4.5rem] text-center md:text-[8rem] lg:text-[8rem] 
+                     md:tracking-[-0.15rem]"
         >
           BIRTHDAY TO YOU!
         </h1>
