@@ -4,7 +4,7 @@ import AfterPropose from '../Components/AfterPropose';
 const Love3 = () => {
   const [yes,setYes]=useState(false);
   return (
-    <div >
+    <div className='' >
            {(!yes) ? <Propose  setYes={setYes} /> : <AfterPropose />}
     </div>
   )
