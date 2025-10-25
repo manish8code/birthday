@@ -15,32 +15,32 @@ const images=[
  {
     "id": 1,
     "src": brownie,
-    "alt": "Beautiful landscape"
+    "alt": "My brownie"
   },
   {
     "id": 2,
     "src": cafeteria,
-    "alt": "cafeteria"
+    "alt": "Cafeteria"
   },
   {
     "id": 3,
     "src": chaiDate,
-    "alt": "chaiDate"
+    "alt": "chai aur tum"
   },
   {
     "id": 4,
     "src": cutiePie,
-    "alt": "cutiePie"
+    "alt": "blush at peak"
   },
   {
     "id": 5,
     "src": DGranny,
-    "alt": "DGranny"
+    "alt": "D'Granny"
   },
   {
     "id": 6,
     "src": firstHand,
-    "alt": "firstHand"
+    "alt": "Bound by Love"
   },
   {
     "id": 7,
@@ -50,27 +50,27 @@ const images=[
   {
     "id": 8,
     "src": MovieTime,
-    "alt": "MovieTime"
+    "alt": "Movie Time"
   },
   {
     "id": 9,
     "src": navratri,
-    "alt": "navratri"
+    "alt": "Navratri"
   },
   {
     "id": 10,
     "src": shadow,
-    "alt": "shadow"
+    "alt": "Shadow"
   },
   {
     "id": 11,
     "src": soothing,
-    "alt": "soothing"
+    "alt": "Quality Time"
   },
   {
     "id": 12,
     "src": spaceResataurant,
-    "alt": "spaceResataurant"
+    "alt": "Space Resataurant"
   },
 ]
 export default images;
