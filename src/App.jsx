@@ -40,7 +40,7 @@ const App = () => {
         console.error("Error preloading images:", err);
       } finally {
         // 🧠 Delay slightly for smoother transition (optional)
-        setTimeout(() => setLoading(false), 800);
+        setTimeout(() => setLoading(false), 2000);
       }
     };
 
