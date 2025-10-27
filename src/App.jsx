@@ -6,6 +6,9 @@ import Love2 from "./Pages/Love2";
 import Love3 from "./Pages/Love3";
 import Loader from "./Loader";
 import Login from "./Pages/Login";
+import load1 from "./assets/load1.svg";
+import load2 from "./assets/load2.svg";
+import load3 from "./assets/load3.svg";
 import { preloadImages } from "./utils/preloadImages";
 
 const App = () => {
@@ -14,20 +17,35 @@ const App = () => {
     localStorage.getItem("isLoggedIn") === "true"
   );
 
-useEffect(() => {
-  // 🧠 Automatically import *all images and gifs* from /assets and /Images
-  const imageModules = {
-    ...import.meta.glob("./assets/**/*.{jpg,jpeg,png,svg,gif}", { eager: true }),
-    ...import.meta.glob("./Images/**/*.{jpg,jpeg,png,svg,gif}", { eager: true }),
-  };
+  useEffect(() => {
+    const preloadAll = async () => {
+      try {
+        // 🧠 STEP 1: Preload loader-related images first (so loader shows instantly)
+        const loaderImages = [load1, load2, load3];
+        await preloadImages(loaderImages);
 
-  const imagePaths = Object.values(imageModules).map((mod) => mod.default);
+        // 🧠 STEP 2: Eagerly import *all* app images and GIFs
+        const imageModules = {
+          ...import.meta.glob("./assets/**/*.{jpg,jpeg,png,svg,gif}", { eager: true }),
+          ...import.meta.glob("./Images/**/*.{jpg,jpeg,png,svg,gif}", { eager: true }),
+        };
 
-  // Preload all found images
-  preloadImages(imagePaths).then(() => {
-    setTimeout(() => setLoading(false), 1000);
-  });
-}, []);
+        const imagePaths = Object.values(imageModules)
+          .map((mod) => mod?.default)
+          .filter(Boolean); // prevent undefined values
+
+        // 🧠 STEP 3: Preload remaining app images
+        await preloadImages(imagePaths);
+      } catch (err) {
+        console.error("Error preloading images:", err);
+      } finally {
+        // 🧠 Delay slightly for smoother transition (optional)
+        setTimeout(() => setLoading(false), 800);
+      }
+    };
+
+    preloadAll();
+  }, []);
 
   const handleLogin = () => {
     localStorage.setItem("isLoggedIn", "true");
