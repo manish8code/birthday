@@ -12,13 +12,13 @@ const AfterPropose = () => {
   };
 
   return (
-    <div className="h-dvh flex items-center justify-center pt-8 bg-pink-400/10 backdrop-blur-[1.5px]">
+    <div className="h-dvh flex items-center justify-center pt-8 ">
       <div className="relative md:h-[90%] flex justify-center px-2">
         <img
           src={!ok ? kiss1 : kiss2}
           alt="Animated GIF"
           loading="eager"
-          className="w-full h-full object-cover rounded-2xl shadow-lg"
+          className="w-full h-full object-cover rounded-2xl"
         />
 
         {showButton && (
