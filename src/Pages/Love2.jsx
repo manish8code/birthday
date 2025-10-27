@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap'; // <-- import GSAP
+import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { SplitText } from "gsap/SplitText";
 import Together from '../Components/Together';
@@ -8,50 +8,55 @@ import MediaQuery from 'react-responsive';
 gsap.registerPlugin(SplitText, useGSAP);
 
 const Love2 = () => {
-    //done this to prevent the right click and download of the photo
-    useEffect(() => {
+  // Prevent right-click
+  useEffect(() => {
     const handleContextMenu = (e) => e.preventDefault();
     document.addEventListener("contextmenu", handleContextMenu);
-    return () => {
-      document.removeEventListener("contextmenu", handleContextMenu);
-    };
+    return () => document.removeEventListener("contextmenu", handleContextMenu);
   }, []);
+
+  // ✅ Force scroll to top on mount
+  useEffect(() => {
+    requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "instant" }));
+  }, []);
+
   const textRef = useRef(null);
+
   useGSAP(() => {
     document.fonts.ready.then(() => {
-    const split = new SplitText(textRef.current, { type: "words,chars" });
-    gsap.from(split.words, {
-       y: 80,
-       opacity: 0,
-       stagger: 0.03,
-       duration: 0.8,
-       ease: "back.out(1.7)",
-    });
-
-   // ✅ Revert SplitText when component unmounts
+      const split = new SplitText(textRef.current, { type: "words,chars" });
+      gsap.from(split.words, {
+        y: 80,
+        opacity: 0,
+        stagger: 0.03,
+        duration: 0.8,
+        ease: "back.out(1.7)",
+      });
       return () => split.revert();
-  });
-}, {scope: textRef});
+    });
+  }, { scope: textRef });
 
   return (
-    <div >
-      <div className=''>
-        <div className="h-dvh w-full  flex flex-col justify-center items-center text-center">
-          <h1 ref={textRef} className='info md:text-9xl text-8xl font-romantic font-bold text-[#832c40]' >Here are some beautiful moments of us</h1>
-        </div>
+    <div>
+      <div className="h-dvh w-full flex flex-col justify-center items-center text-center overflow-hidden">
+        <h1
+          ref={textRef}
+          className="info md:text-9xl text-8xl font-romantic font-bold text-[#832c40]"
+        >
+          Here are some beautiful moments of us
+        </h1>
       </div>
 
-      <div className='check bg-pink-400/10 backdrop-blur-[1.5px]'>
-      <p className='text-center'>scroll down to see the images</p>
-      <MediaQuery maxWidth={1024}>
-        <p className='text-center'>Tap on the images to see the description</p>
-      </MediaQuery>
-      
-        <Together/>
-      </div>
+      <div className="check bg-pink-400/10 backdrop-blur-[1.5px]">
+        <p className="text-center">scroll down to see the images</p>
+        <MediaQuery maxWidth={1024}>
+          <p className="text-center">Tap on the images to see the description</p>
+        </MediaQuery>
 
+        <Together />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Love2
+export default Love2;

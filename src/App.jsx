@@ -10,6 +10,13 @@ import load1 from "./assets/load1.svg";
 import load2 from "./assets/load2.svg";
 import load3 from "./assets/load3.svg";
 import { preloadImages } from "./utils/preloadImages";
+import ScrollToTop from "./ScrollToTop";
+
+// ✅ Import @fontsource packages so CSS is available
+import "@fontsource/antonio";
+import "@fontsource/pinyon-script";
+import "@fontsource/playfair-display";
+import "@fontsource/poppins";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -20,11 +27,37 @@ const App = () => {
   useEffect(() => {
     const preloadAll = async () => {
       try {
-        // 🧠 STEP 1: Preload loader-related images first (so loader shows instantly)
+        // 🧠 STEP 1: Preload loader-related images first
         const loaderImages = [load1, load2, load3];
         await preloadImages(loaderImages);
 
-        // 🧠 STEP 2: Eagerly import *all* app images and GIFs
+        // 🧠 STEP 2: Preload fonts (from node_modules/@fontsource)
+        const fontFiles = [
+          // Antonio
+          new URL("@fontsource/antonio/files/antonio-latin-400-normal.woff2", import.meta.url).href,
+          // Pinyon Script
+          new URL("@fontsource/pinyon-script/files/pinyon-script-latin-400-normal.woff2", import.meta.url).href,
+          // Playfair Display (regular + bold)
+          new URL("@fontsource/playfair-display/files/playfair-display-latin-400-normal.woff2", import.meta.url).href,
+          new URL("@fontsource/playfair-display/files/playfair-display-latin-700-normal.woff2", import.meta.url).href,
+          // Poppins (regular + medium + bold)
+          new URL("@fontsource/poppins/files/poppins-latin-400-normal.woff2", import.meta.url).href,
+          new URL("@fontsource/poppins/files/poppins-latin-500-normal.woff2", import.meta.url).href,
+          new URL("@fontsource/poppins/files/poppins-latin-700-normal.woff2", import.meta.url).href,
+        ];
+
+        const fontPromises = fontFiles.map((url) => {
+          const fontName = url.split("/").slice(-1)[0]; // simple label
+          const font = new FontFace(fontName, `url(${url})`);
+          return font.load().then((loadedFont) => {
+            document.fonts.add(loadedFont);
+          });
+        });
+
+        await Promise.all(fontPromises);
+        console.log("✅ Fonts preloaded");
+
+        // 🧠 STEP 3: Preload all app images
         const imageModules = {
           ...import.meta.glob("./assets/**/*.{jpg,jpeg,png,svg,gif}", { eager: true }),
           ...import.meta.glob("./Images/**/*.{jpg,jpeg,png,svg,gif}", { eager: true }),
@@ -32,15 +65,15 @@ const App = () => {
 
         const imagePaths = Object.values(imageModules)
           .map((mod) => mod?.default)
-          .filter(Boolean); // prevent undefined values
+          .filter(Boolean);
 
-        // 🧠 STEP 3: Preload remaining app images
         await preloadImages(imagePaths);
+        console.log("✅ All images preloaded");
       } catch (err) {
-        console.error("Error preloading images:", err);
+        console.error("Error preloading assets:", err);
       } finally {
-        // 🧠 Delay slightly for smoother transition (optional)
-        setTimeout(() => setLoading(false), 2000);
+        // small delay for smoother transition
+        setTimeout(() => setLoading(false), 1500);
       }
     };
 
@@ -57,6 +90,7 @@ const App = () => {
 
   return (
     <Router>
+      <ScrollToTop />   {/* ✅ Always resets scroll on route change */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Love1 />} />
