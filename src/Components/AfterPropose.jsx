@@ -17,8 +17,8 @@ const AfterPropose = () => {
         <img
           src={!ok ? kiss1 : kiss2}
           alt="Animated GIF"
-          loading="eager"
-          className="w-full h-full object-cover "
+          //loading="eager"
+          className="w-full h-full object-cover"
         />
 
         {showButton && (
