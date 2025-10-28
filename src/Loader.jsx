@@ -12,7 +12,7 @@ const Loader = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % icons.length);
-    }, 450);
+    }, 300);
     return () => clearInterval(interval);
   }, [icons.length]);
 
