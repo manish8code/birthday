@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import BirthdayCard from '../Components/BirthdayCard'
 import Wish from '../Components/Wish'
 import MediaQuery from 'react-responsive'
