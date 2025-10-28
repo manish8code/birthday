@@ -8,11 +8,15 @@ import Loader from "./Loader";
 import Login from "./Pages/Login";
 import ScrollToTop from "./ScrollToTop";
 
-// ✅ Fonts — load CSS early
+// ✅ Fonts
 import "@fontsource/antonio";
 import "@fontsource/pinyon-script";
 import "@fontsource/playfair-display";
 import "@fontsource/poppins";
+
+// ✅ Import your background images and GIFs here
+import bg from "./assets/bg.jpeg";
+
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -21,20 +25,33 @@ const App = () => {
   );
 
   useEffect(() => {
-    const preloadFonts = async () => {
+    const preloadAssets = async () => {
       try {
-        // 🧠 Wait until all @fontsource fonts are ready
-        await document.fonts.ready;
-        console.log("✅ Fonts loaded");
+        // 🖼️ Preload background and GIF images
+        const images = [bg];
+        const imagePromises = images.map(
+          (src) =>
+            new Promise((resolve, reject) => {
+              const img = new Image();
+              img.src = src;
+              img.onload = resolve;
+              img.onerror = reject;
+            })
+        );
+
+        // 🧠 Wait until all fonts + images are ready
+        await Promise.all([document.fonts.ready, ...imagePromises]);
+
+        console.log("✅ Fonts & images preloaded");
       } catch (err) {
-        console.error("Font preload error:", err);
+        console.error("Preload error:", err);
       } finally {
-        // smooth transition (optional)
-        setTimeout(() => setLoading(false), 1000);
+        // Add small delay for smoother transition
+        setTimeout(() => setLoading(false), 800);
       }
     };
 
-    preloadFonts();
+    preloadAssets();
   }, []);
 
   const handleLogin = () => {
@@ -61,6 +78,7 @@ const App = () => {
 };
 
 export default App;
+
 
 
 
