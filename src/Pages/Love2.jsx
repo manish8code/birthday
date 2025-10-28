@@ -41,7 +41,7 @@ const Love2 = () => {
       <div className="h-dvh w-full flex flex-col justify-center items-center text-center overflow-hidden">
         <h1
           ref={textRef}
-          className="info md:text-9xl text-8xl font-romantic font-bold text-[#832c40]"
+          className="info md:text-9xl text-8xl font-romantic font-bold text-[#832c40] text-shadow-red-900/45 text-shadow-sm"
         >
           Here are some beautiful moments of us
         </h1>

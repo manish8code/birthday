@@ -58,7 +58,7 @@ const Wish = () => {
       <div className=" m-3.5">
         <h2
           ref={textRef}
-          className="first-text text-center font-antonio font-bold text-[#832c40] text-shadow-red-900/75 text-shadow-lg 
+          className="first-text text-center font-antonio font-bold text-[#832c40] text-shadow-red-900/75 md:text-shadow-lg text-shadow-md
                      text-[5.2rem] md:text-[8rem] lg:text-[8rem]  tracking-[-0.2rem] md:tracking-[-0.2rem]"
         >
           A VERY HAPPIEST
