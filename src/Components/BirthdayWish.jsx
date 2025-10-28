@@ -16,7 +16,7 @@ const BirthdayWish = () => {
     if (wish) {
       timer = setTimeout(() => {
         setShowSecondCake(true);
-      }, 2000);
+      }, 1150);
     }
     return () => clearTimeout(timer);
   }, [wish]);

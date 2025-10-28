@@ -13,7 +13,7 @@ const AfterPropose = () => {
 
   return (
     <div className="h-dvh flex items-center justify-center pt-8 ">
-      <div className="relative md:h-[90%] flex justify-center px-2">
+      <div className="relative md:h-[90%] flex justify-center ">
         <img
           src={!ok ? kiss1 : kiss2}
           alt="Animated GIF"
