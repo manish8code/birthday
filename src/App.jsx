@@ -60,7 +60,7 @@ const App = () => {
 
         // 🧠 STEP 3: Preload all app images
         const imageModules = {
-          load1,load2,load3,bg,
+          bg,load1,load2,load3,
           //...import.meta.glob("./assets/**/*.{jpg,jpeg,png,svg,gif}", { eager: true }),
          // ...import.meta.glob("./Images/**/*.{jpg,jpeg,png,svg,gif}", { eager: true }),
         };
