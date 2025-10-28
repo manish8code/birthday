@@ -54,7 +54,7 @@ const Together = () => {
             <img
               src={src}
               alt={alt}
-              loading="lazy"  //now there is no need to do it
+              //loading="lazy"  //now there is no need to do it
               className="md:h-96 h-85 w-full rounded-xl shadow-md  hover:rounder-xl transition-transform object-cover"
             />
             <h1 className="rounded-b-xl absolute bottom-0 left-0 w-full p-3 font-elegant text-2xl bg-pink-300/60 text-[#722737] text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
