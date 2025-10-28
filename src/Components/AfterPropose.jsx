@@ -18,7 +18,7 @@ const AfterPropose = () => {
           src={!ok ? kiss1 : kiss2}
           alt="Animated GIF"
           loading="eager"
-          className="w-full h-full object-cover rounded-2xl"
+          className="w-full h-full object-cover "
         />
 
         {showButton && (
