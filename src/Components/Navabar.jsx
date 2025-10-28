@@ -17,16 +17,16 @@ const Navabar = () => {
   const menuItems = (
     <ul className="flex md:flex-row flex-col justify-around md:space-x-16 md:space-y-0 space-y-10  h-60 sm:h-8">
       <li className='svg-pink-drop-shadow'>
-        <NavLink to='/love1'><img src={heartsvg} className="w-9 h-8 svg-pink-drop-shadow" /></NavLink>
+        <NavLink to='/love1'><img src={heartsvg} alt='' className="w-9 h-8 svg-pink-drop-shadow" /></NavLink>
       </li>
       <li className='svg-pink-drop-shadow'>
         <NavLink to='/love2' className="flex">
-          {[...Array(2)].map((_, i) => <img key={i} src={heartsvg} className="w-9 h-8 " />)}
+          {[...Array(2)].map((_, i) => <img key={i} alt='' src={heartsvg} className="w-9 h-8 " />)}
         </NavLink>
       </li>
       <li className='svg-pink-drop-shadow'>
         <NavLink to='/love3' className="flex">
-          {[...Array(3)].map((_, i) => <img key={i} src={heartsvg} className="w-9 h-8 " />)}
+          {[...Array(3)].map((_, i) => <img key={i} alt='' src={heartsvg} className="w-9 h-8 " />)}
         </NavLink>
       </li>
     </ul>
