@@ -37,6 +37,7 @@ const BirthdayWish = () => {
             alt="Birthday cake"
             className="cursor-pointer"
             onClick={wishnow}
+            loading="lazy"
           />
           {showSecondCake && (
             <h1 className="text-4xl text-center font-bold bg-[#a03939] text-[#e0cbd0] m-4 p-2 rounded-2xl animate-bounce">

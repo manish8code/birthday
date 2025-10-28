@@ -17,7 +17,7 @@ const AfterPropose = () => {
         <img
           src={!ok ? kiss1 : kiss2}
           alt="Animated GIF"
-          //loading="eager"
+          loading="lazy"
           className="w-full h-full object-cover"
         />
 
