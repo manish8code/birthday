@@ -26,7 +26,7 @@ const BirthdayWish = () => {
       {!wish ? (
         <button
           onClick={wishnow}
-          className="bg-blue-500 text-white text-2xl px-4 py-3 rounded-lg shadow hover:bg-blue-600 transition"
+          className=" font-elegant   bg-blue-500 text-white text-2xl px-4 py-3 rounded-lg shadow hover:bg-blue-600 transition"
         >
           Click Here
         </button>

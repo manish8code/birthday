@@ -48,7 +48,10 @@ const Love2 = () => {
       </div>
 
       <div className="check bg-pink-400/10 backdrop-blur-[1.5px]">
-        <p className="text-center">scroll down to see the images</p>
+        <p className="text-center md:leading-3">Scroll down to see the images</p>
+        <MediaQuery minWidth={1024}>
+          <p className="text-center ">Hover on the images to see the description</p>
+        </MediaQuery>
         <MediaQuery maxWidth={1024}>
           <p className="text-center">Tap on the images to see the description</p>
         </MediaQuery>

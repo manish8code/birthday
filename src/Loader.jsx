@@ -26,7 +26,7 @@ const Loader = () => {
         </div>
         
       </div>
-      <h1 className='text-5xl'>Loading...</h1>
+      <h1 className='text-5xl font-elegant'>Loading...</h1>
     </div>
   )
 }
