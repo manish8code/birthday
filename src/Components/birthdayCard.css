@@ -150,14 +150,20 @@
 p {
   font-family: "Brush Script MT", cursive;
   font-size: 30px;
-  margin: 25px;
+  margin: 15px;
   color: #111111;
+}
+.lovely{
+  position: absolute;
+  left: 170px;
+  top: 325px;
+  color: #000000;
 }
 
 .name {
   position: absolute;
   left: 170px;
-  top: 350px;
+  top: 365px;
   color: #000000;
 }
 
