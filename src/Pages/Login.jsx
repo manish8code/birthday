@@ -9,12 +9,17 @@ const Login = ({ onLogin }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    document.activeElement.blur();
+    
     const validUsername = "manish";
     const validPassword = "143";
 
-    if (username === validUsername && password === validPassword) {
-      onLogin();
-    } else {
+  if (
+    username.trim().toLowerCase() === validUsername.toLowerCase() &&
+    password.trim() === validPassword
+  ) {
+    onLogin();
+  } else {
       alert("Invalid username or password!");
     }
   };
@@ -34,6 +39,8 @@ const Login = ({ onLogin }) => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           className="border rounded-md w-full p-2 mb-3"
+          autoCapitalize="none"
+          autoCorrect="off"
         />
 
         {/* Password with toggle */}
@@ -44,6 +51,8 @@ const Login = ({ onLogin }) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="border rounded-md w-full p-2 pr-10"
+            autoCapitalize="none"
+            autoCorrect="off"
           />
           <button
             type="button"
